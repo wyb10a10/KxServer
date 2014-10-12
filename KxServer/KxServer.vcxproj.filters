@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="BaseFrame">
+      <UniqueIdentifier>{7679f436-2c68-447d-9280-f753741d3f79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseFrame\Core">
+      <UniqueIdentifier>{ff82b095-3dfc-429a-8b18-a5b3e90d6fbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseFrame\Communication">
+      <UniqueIdentifier>{cd903502-d611-4ad2-ad15-43c0f06df2df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseFrame\BaseServer">
+      <UniqueIdentifier>{917c3a29-2f5f-426a-bab1-ff8291e7d134}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseFrame\Communication\BaseSocket.cpp">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Communication\Epoller.cpp">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Communication\SelectPoller.cpp">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Communication\TCPClienter.cpp">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Communication\TCPConnector.cpp">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Communication\TCPListener.cpp">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Communication\UDPUnit.cpp">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Core\BufferList.cpp">
+      <Filter>BaseFrame\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Core\CommPool.cpp">
+      <Filter>BaseFrame\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Core\MemPool.cpp">
+      <Filter>BaseFrame\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\Core\TimerManager.cpp">
+      <Filter>BaseFrame\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFrame\ServerBase\BaseServer.cpp">
+      <Filter>BaseFrame\BaseServer</Filter>
+    </ClCompile>
+    <ClCompile Include="Demo\TestServer.cpp" />
+    <ClCompile Include="BaseFrame\Core\Ref.cpp">
+      <Filter>BaseFrame\Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseFrame\Communication\UDPUnit.h">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Communication\BaseSocket.h">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Communication\Epoller.h">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Communication\SelectPoller.h">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Communication\TCPClienter.h">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Communication\TCPConnector.h">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Communication\TCPListener.h">
+      <Filter>BaseFrame\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Core\BufferList.h">
+      <Filter>BaseFrame\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Core\CommPool.h">
+      <Filter>BaseFrame\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Core\ICore.h">
+      <Filter>BaseFrame\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Core\KxLog.h">
+      <Filter>BaseFrame\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Core\MemPool.h">
+      <Filter>BaseFrame\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Core\TimerManager.h">
+      <Filter>BaseFrame\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\ServerBase\BaseServer.h">
+      <Filter>BaseFrame\BaseServer</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\KXServer.h">
+      <Filter>BaseFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFrame\Core\Ref.h">
+      <Filter>BaseFrame\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseFrame\Communication\BaseSocket.cpp" />
+    <ClCompile Include="BaseFrame\Communication\Epoller.cpp" />
+    <ClCompile Include="BaseFrame\Communication\SelectPoller.cpp" />
+    <ClCompile Include="BaseFrame\Communication\TCPClienter.cpp" />
+    <ClCompile Include="BaseFrame\Communication\TCPConnector.cpp" />
+    <ClCompile Include="BaseFrame\Communication\TCPListener.cpp" />
+    <ClCompile Include="BaseFrame\Communication\UDPUnit.cpp" />
+    <ClCompile Include="BaseFrame\Core\BufferList.cpp" />
+    <ClCompile Include="BaseFrame\Core\CommPool.cpp" />
+    <ClCompile Include="BaseFrame\Core\MemPool.cpp" />
+    <ClCompile Include="BaseFrame\Core\Ref.cpp" />
+    <ClCompile Include="BaseFrame\Core\TimerManager.cpp" />
+    <ClCompile Include="BaseFrame\ServerBase\BaseServer.cpp" />
+    <ClCompile Include="Demo\TestServer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseFrame\Communication\BaseSocket.h" />
+    <ClInclude Include="BaseFrame\Communication\Epoller.h" />
+    <ClInclude Include="BaseFrame\Communication\SelectPoller.h" />
+    <ClInclude Include="BaseFrame\Communication\TCPClienter.h" />
+    <ClInclude Include="BaseFrame\Communication\TCPConnector.h" />
+    <ClInclude Include="BaseFrame\Communication\TCPListener.h" />
+    <ClInclude Include="BaseFrame\Communication\UDPUnit.h" />
+    <ClInclude Include="BaseFrame\Core\BufferList.h" />
+    <ClInclude Include="BaseFrame\Core\CommPool.h" />
+    <ClInclude Include="BaseFrame\Core\ICore.h" />
+    <ClInclude Include="BaseFrame\Core\KxLog.h" />
+    <ClInclude Include="BaseFrame\Core\MemPool.h" />
+    <ClInclude Include="BaseFrame\Core\Ref.h" />
+    <ClInclude Include="BaseFrame\Core\TimerManager.h" />
+    <ClInclude Include="BaseFrame\KXServer.h" />
+    <ClInclude Include="BaseFrame\ServerBase\BaseServer.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AADAEDF6-3124-4E05-811C-1D20A7FB2A7A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>KxServer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)KxServer\BaseFrame\;$(SolutionDir)KxServer\BaseFrame\Core\;$(SolutionDir)KxServer\BaseFrame\ServerBase;$(SolutionDir)KxServer\BaseFrame\Communication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
