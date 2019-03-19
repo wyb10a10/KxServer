@@ -22,7 +22,7 @@ CTCPClienter::CTCPClienter(CBaseSocket* sock, ICommunicationPoller* poller)
 					m_SendBufferOffset(0),
                     m_RecvBufferOffset(0)
 {
-    //分配全局的接收缓冲区
+    //鍒嗛厤鍏ㄥ眬鐨勬帴鏀剁紦鍐插尯
     if (NULL == g_RecvBuffer)
     {
         g_RecvBuffer = (char*)CMemManager::GetInstance()->MemAlocate(BUFF_SIZE);
@@ -150,7 +150,6 @@ COMMUNICATIONID CTCPClienter::GetCommunicationID()
 //call by poller
 int CTCPClienter::OnRecv()
 {
-	memset(g_RecvBuffer, 0, BUFF_SIZE);
 	int requestLen = 0;
 	int ret = Recv(g_RecvBuffer, BUFF_SIZE);
 
@@ -160,7 +159,7 @@ int CTCPClienter::OnRecv()
 		char* processBuf = g_RecvBuffer;
 		char* stickBuf = NULL;
 
-        //如果有半包，拼接到半包的后面，注意newsize
+        //濡傛灉鏈夊崐鍖咃紝鎷兼帴鍒板崐鍖呯殑鍚庨潰锛屾敞鎰弉ewsize
 		if (NULL != m_RecvBuffer)
 		{
 			//append to my recvbuffer
@@ -226,7 +225,7 @@ int CTCPClienter::OnRecv()
                 {
                     return requestLen;
                 }
-                //半包缓存
+                //鍗婂寘缂撳瓨
                 else if (ret < requestLen)
                 {
                     //m_RecvBuffer must be NULL
@@ -270,7 +269,7 @@ again:
 	if(len >= (int)(m_SendBufferLen - m_SendBufferOffset))
 	{
 		//delete [] m_SendBuffer;
-        //回收已经发送出去的内存
+        //鍥炴敹宸茬粡鍙戦�佸嚭鍘荤殑鍐呭瓨
         MemMgrRecycle(m_SendBuffer, m_SendBufferLen);
 
         BufferNode* node = m_BufferList.Head();
