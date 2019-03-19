@@ -22,7 +22,7 @@ CTCPConnector::CTCPConnector(char* addr, int port, ICommunicationPoller* poller)
                     m_SendBufferOffset(0),
                     m_RecvBufferOffset(0)
 {
-    //∑÷≈‰»´æ÷µƒΩ” ’ª∫≥Â«¯
+    //ÂàÜÈÖçÂÖ®Â±ÄÁöÑÊé•Êî∂ÁºìÂÜ≤Âå∫
     if (NULL == g_RecvBuffer)
     {
         g_RecvBuffer = (char*)CMemManager::GetInstance()->MemAlocate(BUFF_SIZE);
@@ -152,9 +152,8 @@ COMMUNICATIONID CTCPConnector::GetCommunicationID()
 int CTCPConnector::OnRecv()
 {
 	//recv to globa buffer
-    memset(g_RecvBuffer, 0, BUFF_SIZE);
-    int requestLen = 0;
-    int ret = Recv(g_RecvBuffer, BUFF_SIZE);
+    	int requestLen = 0;
+    	int ret = Recv(g_RecvBuffer, BUFF_SIZE);
 
 	//if ret < 0 
 	if (NULL != m_ProcessModule && ret > 0)
@@ -162,7 +161,7 @@ int CTCPConnector::OnRecv()
 		char* processBuf = g_RecvBuffer;
 		char* stickBuf = NULL;
 
-        //»Áπ˚”–∞Î∞¸
+        	//Â¶ÇÊûúÊúâÂçäÂåÖ
 		if (NULL != m_RecvBuffer)
 		{
 			//append to my recvbuffer
@@ -170,13 +169,13 @@ int CTCPConnector::OnRecv()
 			if ((m_RecvBufferLen - m_RecvBufferOffset) < (unsigned int)ret)
 			{
 				newsize = m_RecvBufferLen - m_RecvBufferOffset;
-				//∫Û√Êµƒ¡¨∞¸
-                stickBuf = processBuf + newsize;
+				//ÂêéÈù¢ÁöÑËøûÂåÖ
+                		stickBuf = processBuf + newsize;
 			}
 			memcpy(m_RecvBuffer + m_RecvBufferOffset, processBuf, newsize);
-            //ret all buffer length
-            ret += m_RecvBufferOffset;
-            m_RecvBufferOffset += newsize;
+            		//ret all buffer length
+            		ret += m_RecvBufferOffset;
+            		m_RecvBufferOffset += newsize;
 			processBuf = m_RecvBuffer;
 		}
 
@@ -205,8 +204,8 @@ int CTCPConnector::OnRecv()
 		while (ret >= requestLen)
 		{
 			m_ProcessModule->Process(processBuf, requestLen, this);
-            //move to next package
-            processBuf += requestLen;
+            		//move to next package
+            		processBuf += requestLen;
 
 			if (NULL != m_RecvBuffer)
 			{
@@ -226,15 +225,15 @@ int CTCPConnector::OnRecv()
 				{
 					return requestLen;
 				}
-                //∞Î∞¸ª∫¥Ê
-                else if (ret < requestLen)
-                {
-                    m_RecvBuffer = (char*)CMemManager::GetInstance()->MemAlocate(requestLen);
-                    m_RecvBufferLen = requestLen;
-                    m_RecvBufferOffset = ret;
-                    memcpy(m_RecvBuffer, processBuf, ret);
-                    return ret;
-                }
+                		//ÂçäÂåÖÁºìÂ≠ò
+                		else if (ret < requestLen)
+                		{
+                    			m_RecvBuffer = (char*)CMemManager::GetInstance()->MemAlocate(requestLen);
+                    			m_RecvBufferLen = requestLen;
+                    			m_RecvBufferOffset = ret;
+                    			memcpy(m_RecvBuffer, processBuf, ret);
+                    			return ret;
+                		}
 			}
 		}
 	}
@@ -263,11 +262,11 @@ again:
 		}
 	}
 
-    //if the socket invalid, len will be -1
+    	//if the socket invalid, len will be -1
 	int len = Send(m_SendBuffer, m_SendBufferLen);
 
 	//send finish
-    if(len >= (int)(m_SendBufferLen - m_SendBufferOffset))
+    	if(len >= (int)(m_SendBufferLen - m_SendBufferOffset))
 	{
 		CMemManager::GetInstance()->MemRecycle(m_SendBuffer, m_SendBufferLen);
 
